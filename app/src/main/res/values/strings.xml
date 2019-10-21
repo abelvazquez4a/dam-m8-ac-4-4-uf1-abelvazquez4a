@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyFilmRatesApp</string>
+    <string name="title_activity_my_rates">MyRates</string>
+</resources>
