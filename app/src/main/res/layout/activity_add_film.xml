@@ -7,6 +7,7 @@
     tools:context=".AddFilm">
 
     <EditText
+        android:onClick="removeText"
         android:id="@+id/editText_texto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
