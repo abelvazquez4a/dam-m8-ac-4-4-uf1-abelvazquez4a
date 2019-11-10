@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">MyFilmRatesApp</string>
     <string name="title_activity_my_rates">MyRates</string>
+    <string name="name">Nombre</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="email">Correo electrónico</string>
+    <string name="surname">Apellido</string>
+    <string name="biography">Biografía</string>
+    <string name="newsletter">Suscribirme a noticias</string>
+    <string name="genre">Género</string>
 </resources>
