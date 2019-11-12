@@ -21,6 +21,7 @@ public class Profile extends AppCompatActivity {
     TextInputLayout username, email, name, surname, biography;
     CheckBox newsletter;
     boolean suscrito;
+    int spinnerPosition=0;
 
     String nameS, surnameS, emailS, usernameS, biographyS, genreS;
     @Override
@@ -38,6 +39,12 @@ public class Profile extends AppCompatActivity {
 
     }
     @Override
+    protected void onResume(){
+        super.onResume();
+        retrievePreferences();
+    }
+
+    @Override
     protected void onPause(){
         super.onPause();
         guardarPreferencias();
@@ -47,8 +54,6 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onStop(){
         super.onStop();
-        guardarPreferencias();
-        Log.d("prueba","guardando preferencias en onStop");
     }
 
     public void spinner(){
@@ -72,6 +77,7 @@ public class Profile extends AppCompatActivity {
         emailS = email.getEditText().getText().toString();
         usernameS = username.getEditText().getText().toString();
         biographyS = biography.getEditText().getText().toString();
+        spinnerPosition=spinner.getSelectedItemPosition();
         if (newsletter.isChecked())suscrito=true;
         else suscrito=false;
         SharedPreferences.Editor editor = prefs.edit();
@@ -82,6 +88,17 @@ public class Profile extends AppCompatActivity {
         editor.putString("biography",biographyS);
         editor.putBoolean("subscribed",suscrito);
         editor.putString("genre",genreS);
+        editor.putInt("spinnerPosition",spinnerPosition);
         editor.commit();
+    }
+
+    public void retrievePreferences (){
+        name.getEditText().setText(prefs.getString("name",nameS));
+        surname.getEditText().setText(prefs.getString("surname",surnameS));
+        email.getEditText().setText(prefs.getString("email",emailS));
+        username.getEditText().setText(prefs.getString("username",usernameS));
+        biography.getEditText().setText(prefs.getString("biography",biographyS));
+        newsletter.setChecked(prefs.getBoolean("subscribed",suscrito));
+        spinner.setSelection(prefs.getInt("spinnerPosition",spinnerPosition));
     }
 }
