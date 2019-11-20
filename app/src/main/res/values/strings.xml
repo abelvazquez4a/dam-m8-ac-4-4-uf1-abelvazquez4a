@@ -8,4 +8,13 @@
     <string name="biography">Biografía</string>
     <string name="newsletter">Suscribirme a noticias</string>
     <string name="genre">Género</string>
+    <string name="title">Título</string>
+    <string name="year">Año</string>
+    <string name="director">Director</string>
+    <string name="rate">Puntuación</string>
+    <string name="deleted_film">Película borrada</string>
+    <string name="film_not_found">No existe la película</string>
+    <string name="created_film">Película creada</string>
+    <string name="updated_film">Película actualizada</string>
+    <string name="create_film_first">Tienes que crear una película primero.</string>
 </resources>
