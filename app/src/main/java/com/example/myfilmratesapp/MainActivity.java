@@ -49,4 +49,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intentMyRates = new Intent (this,MyRates.class);
         startActivity(intentMyRates);
     }
+
+    public void startTrailerDownload(View view){
+        Intent intentTrailerDownload = new Intent (this,DownloadTrailer.class);
+        startActivity(intentTrailerDownload);
+    }
 }
